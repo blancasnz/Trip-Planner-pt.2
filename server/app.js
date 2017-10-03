@@ -4,8 +4,8 @@ var app = express();
 
 var morgan = require('morgan');
 var bodyParser = require('body-parser');
-var db = require("./models").db;
-// var Sequelize = require('sequelize');
+var db = require('../models').db;
+
 
 //logging and body-parsing
 app.use(morgan);
