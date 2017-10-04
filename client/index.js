@@ -22,6 +22,17 @@ fetch('/api/attractions')
       var element = document.createElement("option")
       element.append(hotel.name)
       document.getElementById("hotels-choices").append(element)
+      // var hotelButton = document.getElementById("hotels-add")
+      // hotelButton.on('click', function() {
+      //   console.log("testing")
+      // })
+      document.getElementById("hotels-add").addEventListener("click", function() {
+        if (element.selected === true) {
+          var itineraryItem = document.createElement("li")
+          itineraryItem.append(element.value)
+          document.getElementById("hotels-list").append(itineraryItem)
+        }
+      })
     })
     result[1].forEach(function(restaurant) {
       var element = document.createElement("option")
@@ -34,6 +45,8 @@ fetch('/api/attractions')
       document.getElementById("activities-choices").append(element)
     })
    })
+
+
 
 
 // fetch('/api/attractions')
