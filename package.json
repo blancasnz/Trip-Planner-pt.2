@@ -15,6 +15,7 @@
     "webpack": "^3.6.0"
   },
   "dependencies": {
+    "bluebird": "^3.5.0",
     "body-parser": "^1.18.2",
     "express": "^4.16.1",
     "mapbox-gl": "^0.40.1",
