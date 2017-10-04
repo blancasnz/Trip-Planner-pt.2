@@ -1,24 +1,24 @@
 var Sequelize = require('sequelize');
 const db = new Sequelize('postgres://localhost:5432/tripPlanner', { logging: false });
 
-Hotel = db.define('hotel', {
+const Hotel = db.define('hotel', {
   name: Sequelize.STRING,
   num_stars: Sequelize.FLOAT(1, 5),
   amenities: Sequelize.TEXT
 });
 
-Restaurant = db.define('restaurant', {
+const Restaurant = db.define('restaurant', {
   name: Sequelize.STRING,
   cuisine: Sequelize.TEXT,
   price: Sequelize.INTEGER
 })
 
-Activity = db.define('activity', {
+const Activity = db.define('activity', {
   name: Sequelize.STRING,
   age_range: Sequelize.STRING
 })
 
-Place = db.define('place', {
+const Place = db.define('place', {
   address: Sequelize.STRING,
   city: Sequelize.STRING,
   state: Sequelize.STRING,

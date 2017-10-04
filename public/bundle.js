@@ -550,6 +550,55 @@ const marker = buildMarker("activities", [-74.009, 40.705]);
 marker.addTo(map);
 
 
+fetch('/api/attractions')
+   .then(result => result.json())
+   .then(function(result) {
+    //console.log(result[0][0].name)
+    result[0].forEach(function(hotel) {
+      var element = document.createElement("option")
+      element.append(hotel.name)
+      document.getElementById("hotels-choices").append(element)
+    })
+    result[1].forEach(function(restaurant) {
+      var element = document.createElement("option")
+      element.append(restaurant.name)
+      document.getElementById("restaurants-choices").append(element)
+    })
+    result[2].forEach(function(activity) {
+      var element = document.createElement("option")
+      element.append(activity.name)
+      document.getElementById("activities-choices").append(element)
+    })
+   })
+
+
+// fetch('/api/attractions')
+//   .then(function(result) {
+//     console.log(result)
+//     // result[0].forEach(function(hotel) {
+//     //   console.log(hotel)
+//     //   // var element = document.createElement("option")
+//     //   // element.append(hotel.name)
+//     //   // document.getElementById("hotels-choices").append(element)
+//     // })
+//   })
+
+
+
+// function replacer(idName) {
+
+// }
+
+
+
+
+// var option = document.getElementsByTagName("option");
+// option.append(
+//   fetch('/api/attractions')
+//   .then(result => result.json()))
+// document.getElementById("hotels-choices").append(option)
+
+
 /***/ }),
 /* 2 */
 /***/ (function(module, exports) {
