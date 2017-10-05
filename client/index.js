@@ -15,10 +15,10 @@ marker.addTo(map);
 
 
 fetch('/api/attractions')
-   .then(result => result.json())
-   .then(function(result) {
-    //console.log(result[0][0].name)
-    result[0].forEach(function(hotel) {
+  .then(result => result.json())
+  .then(function (result) {
+    //could also do a nested for Each
+    result[0].forEach(function (hotel) {
       var element = document.createElement("option")
       element.append(hotel.name)
       document.getElementById("hotels-choices").append(element)
@@ -26,7 +26,7 @@ fetch('/api/attractions')
       // hotelButton.on('click', function() {
       //   console.log("testing")
       // })
-      document.getElementById("hotels-add").addEventListener("click", function() {
+      document.getElementById("hotels-add").addEventListener("click", function () {
         if (element.selected === true) {
           var itineraryItem = document.createElement("li")
           itineraryItem.append(element.value)
@@ -34,17 +34,17 @@ fetch('/api/attractions')
         }
       })
     })
-    result[1].forEach(function(restaurant) {
+    result[1].forEach(function (restaurant) {
       var element = document.createElement("option")
       element.append(restaurant.name)
       document.getElementById("restaurants-choices").append(element)
     })
-    result[2].forEach(function(activity) {
+    result[2].forEach(function (activity) {
       var element = document.createElement("option")
       element.append(activity.name)
       document.getElementById("activities-choices").append(element)
     })
-   })
+  })
 
 
 

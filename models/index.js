@@ -3,14 +3,20 @@ const db = new Sequelize('postgres://localhost:5432/tripPlanner', { logging: fal
 
 const Hotel = db.define('hotel', {
   name: Sequelize.STRING,
-  num_stars: Sequelize.FLOAT(1, 5),
-  amenities: Sequelize.TEXT
+  num_stars: {
+    type: Sequelize.FLOAT(1, 5)
+    // in class : type : Sequelize.INT, validate : { min:1, max:5}
+  },
+  amenities: Sequelize.STRING
 });
 
 const Restaurant = db.define('restaurant', {
   name: Sequelize.STRING,
   cuisine: Sequelize.TEXT,
-  price: Sequelize.INTEGER
+  price: {
+    type: Sequelize.INTEGER,
+    validate: { min: 1, max: 5 }
+  }
 })
 
 const Activity = db.define('activity', {

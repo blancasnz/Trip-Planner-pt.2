@@ -7,26 +7,20 @@ var bodyParser = require('body-parser');
 var db = require('../models').db;
 var routes = require('../routes');
 
-
 //logging and body-parsing
 app.use(morgan('combined'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
+
+//app.get('/', (req, res, next) => {
+// res.sendFile(path.join(__dirname, '.../public/index.html'))
+// })
+
 //static file-serving middleware
 app.use(express.static(path.join(__dirname, '..', 'public')));
 
-app.use('/api', routes);
-
-
-
-
-
-
-
-
-
-
+app.use('/api', routes); // only arguement where first param is optional
 
 
 
